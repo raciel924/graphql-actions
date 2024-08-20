@@ -25,6 +25,13 @@ jobs:
         echo "Welcome to Docker"
         docker login -u $DOCKER_USER -p $DOCKER_PASSWORD
         echo "finish login"
+    - name: Build Docker image
+      run: |
+        docker build --tag raciel924/docker-graphql:0.0.1 .
+    - name: Push Docker image
+      run: |
+        docker push raciel924/docker-graphql:0.0.1
+
       
       
 
